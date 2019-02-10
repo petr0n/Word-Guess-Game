@@ -1,0 +1,13 @@
+#word-to-guess span {
+    border-bottom: 1px solid black;
+    display: inline-block;
+    margin-right: 10px;
+    width: 15px;
+    text-align: center;
+}
+
+#non-matching span {
+    font-size: 20px;
+    display: inline-block;
+    margin-right: 10px;
+}

@@ -7,9 +7,53 @@ https://umn.bootcampcontent.com/University-of-Minnesota-Boot-Camp/MINSTP201901FS
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>Peter's Hangman Game</title>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="assets/css/reset.css">
+    <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
-    
+    <div class="wrapper">
+        <div class="contaner">
+            <div class="row">
+                <div class="col-sm-6">
+                    <h1>Word Guess Game</h1>
+                    <h2>(Hangman)</h2>
+                    
+                </div>
+                <div class="col-sm-6">
+                    <hr>
+                    <div>
+                        <h4>Word</h4>
+                        <div id="word-to-guess"></div>
+                    </div>
+                    <hr>
+                    <div>
+                        <h4>Non Matching Letters</h4>
+                        <span id="non-matching"></span>
+                    </div>
+                    <hr>
+                    <div>
+                        <h4>Total Guesses</h4>
+                        <span id="total-guesses"></span>
+                    </div>
+                    <hr>
+                    <div class="row">
+                        <div class="col-sm-3">
+                            <h4>Wins</h4>
+                            <span id="wins">0</span>
+                        </div>
+                        <div class="col-sm-3">
+                            <h4>Loses</h4>
+                            <span id="loses">0</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <script src="assets/javascript/game.js"></script>
 </body>
 </html>
