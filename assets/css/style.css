@@ -1,13 +1,127 @@
-#word-to-guess span {
-    border-bottom: 1px solid black;
-    display: inline-block;
-    margin-right: 10px;
-    width: 15px;
+/**
+fonts
+font-family: 'Ultra', serif; <- for headers
+font-family: 'Oswald', sans-serif; <- for copy
+
+**/
+
+
+/** html elements **/
+body {
+    background: linear-gradient(#9974AD 0%, #F9E4B3 100%) no-repeat 50% 50% / 100% 100%;
+    margin: 0;
+    padding: 0;
+    font-family: 'Oswald', sans-serif;
+    height: 100%;
+    width: 100%;
+}
+h1, h2, h3, h4, h5 {
+    font-family: 'Ultra', sans-serif;
+}
+h1 {
+    font-size: 3em;
+}
+h2 {
+    font-size: 2em;
+}
+h3 {
+    font-size: 1.4em;
+}
+/** bootstrap modifications **/
+.card {
     text-align: center;
 }
 
+
+.wrapper {
+    background-image: url('../../assets/images/page-bg.png');
+    background-repeat: no-repeat;
+    background-size: 100%;
+    background-position: center bottom;    
+}
+header{
+    background-image: url('../../assets/images/wood-plank.png');
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    background-position: center;
+    height: 120px;
+    padding-top: 12px;
+}
+.gallows {
+    background-image: url('../../assets/images/gallows.png');
+    background-position: 0;
+    background-repeat: no-repeat;
+    background-size: 90%;
+    height: 700px;
+    position: relative;
+    width: 100%;
+}
+
+.gallows>div {
+    background-repeat: no-repeat;
+    background-position: 0 0;
+    display: none;
+    height: 444px;
+    left: 359px;
+    position: absolute;
+    top: 170px;
+    width: 119px;
+}
+.noose {
+    background-image: url('../../assets/images/noose.png');
+    z-index: 5;
+}
+.head {
+    background-image: url('../../assets/images/head.png');
+    z-index: 10;
+}
+.body {
+    background-image: url('../../assets/images/body.png');
+}
+.left-arm {
+    background-image: url('../../assets/images/left-arm.png');
+}
+.right-arm {
+    background-image: url('../../assets/images/right-arm.png');
+}
+.left-leg {
+    background-image: url('../../assets/images/left-leg.png');
+}
+.right-leg {
+    background-image: url('../../assets/images/right-leg.png');
+}
+
+
+
+#word-to-guess span {
+    border-bottom: 1px solid black;
+    display: inline-block;
+    font-size: 2em;
+    margin-right: 10px;
+    text-align: center;
+    width: 15px;
+}
+
 #non-matching span {
-    font-size: 20px;
+    font-size: 1.4em;
     display: inline-block;
     margin-right: 10px;
+}
+
+.game-tag div {
+    height: 30px;
+    line-height: 1;
+}
+.score {
+    text-align: center;
+}
+.score p {
+    font-size: 3em;
+}
+
+.opacity-5 {
+    background-color: rgba(255, 255, 255, .5);
+}
+.padding-50 {
+    padding: 50px;
 }

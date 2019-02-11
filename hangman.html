@@ -3,50 +3,72 @@ https://umn.bootcampcontent.com/University-of-Minnesota-Boot-Camp/MINSTP201901FS
 -->
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Peter's Hangman Game</title>
-    <!-- Latest compiled and minified CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link href='https://fonts.googleapis.com/css?family=Ultra' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS"
+        crossorigin="anonymous">
     <link rel="stylesheet" href="assets/css/reset.css">
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
+
 <body>
     <div class="wrapper">
-        <div class="contaner">
+        <div class="container">
             <div class="row">
-                <div class="col-sm-6">
-                    <h1>Word Guess Game</h1>
-                    <h2>(Hangman)</h2>
-                    
+                <div class="col-sm-12">
+                    <header>
+                        <h1 class="text-center">Word Guess Game</h1>
+                        <h2 class="text-center">(Hangman)</h2>
+                    </header>
                 </div>
-                <div class="col-sm-6">
-                    <hr>
-                    <div>
-                        <h4>Word</h4>
-                        <div id="word-to-guess"></div>
+            </div>
+            <div class="row">
+                <div class="col-sm-8">
+                    <div class="gallows">
+                        <div class="noose"></div>
+                        <div class="head"></div>
+                        <div class="body"></div>
+                        <div class="left-arm"></div>
+                        <div class="right-arm"></div>
+                        <div class="left-leg"></div>
+                        <div class="right-leg"></div>
                     </div>
-                    <hr>
-                    <div>
-                        <h4>Non Matching Letters</h4>
-                        <span id="non-matching"></span>
-                    </div>
-                    <hr>
-                    <div>
-                        <h4>Total Guesses</h4>
-                        <span id="total-guesses"></span>
-                    </div>
-                    <hr>
-                    <div class="row">
-                        <div class="col-sm-3">
-                            <h4>Wins</h4>
-                            <span id="wins">0</span>
+                </div>
+                <div class="col-sm-4">
+                    <div class="padding-50 opacity-5 text-center">
+                        <div class="game-tag">
+                            <h3>The Word</h3>
+                            <div id="word-to-guess"></div>
                         </div>
-                        <div class="col-sm-3">
-                            <h4>Loses</h4>
-                            <span id="loses">0</span>
+                        <hr>
+                        <div class="game-tag">
+                            <h3>Dumb Guesses</h3>
+                            <div id="non-matching"></div>
+                        </div>
+                        <hr>
+                        <div class="game-tag">
+                            <h3>Ur Guesses</h3>
+                            <div id="total-guesses"></div>
+                        </div>
+                        <hr>
+                        <div class="row score">
+                            <div class="col-sm-6">
+                                <div class="game-tag">
+                                    <p id="wins">0</p>
+                                    <h3>Wins</h3>
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="game-tag">
+                                    <p id="losses">0</p>
+                                    <h3>Losses</h3>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -54,6 +76,36 @@ https://umn.bootcampcontent.com/University-of-Minnesota-Boot-Camp/MINSTP201901FS
             </div>
         </div>
     </div>
+
+    <!-- Modal -->
+    <div class="modal fade" id="modalCenter" tabindex="-1" role="dialog" aria-labelledby="modalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="modalCenterTitle">Modal title</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    ...
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Save changes</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k"
+        crossorigin="anonymous"></script>
     <script src="assets/javascript/game.js"></script>
 </body>
+
 </html>
