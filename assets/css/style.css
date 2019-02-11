@@ -58,14 +58,15 @@ header{
 }
 
 .gallows>div {
+    background-size: 100%;
     background-repeat: no-repeat;
     background-position: 0 0;
     display: none;
-    height: 444px;
-    left: 359px;
+    height: 373px;
+    left: 286px;
     position: absolute;
-    top: 170px;
-    width: 119px;
+    top: 68px;
+    width: 100px;
 }
 .noose {
     background-image: url('../../assets/images/noose.png');
@@ -119,9 +120,8 @@ header{
     font-size: 3em;
 }
 
-.opacity-5 {
-    background-color: rgba(255, 255, 255, .5);
-}
-.padding-50 {
+.scoreboard {
+    background-color: rgba(255, 255, 255, .6);
+    margin-top: 90px;
     padding: 50px;
 }

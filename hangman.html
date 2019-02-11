@@ -29,7 +29,7 @@ https://umn.bootcampcontent.com/University-of-Minnesota-Boot-Camp/MINSTP201901FS
             </div>
             <div class="row">
                 <div class="col-sm-8">
-                    <div class="gallows">
+                    <div id="hangman" class="gallows">
                         <div class="noose"></div>
                         <div class="head"></div>
                         <div class="body"></div>
@@ -40,7 +40,7 @@ https://umn.bootcampcontent.com/University-of-Minnesota-Boot-Camp/MINSTP201901FS
                     </div>
                 </div>
                 <div class="col-sm-4">
-                    <div class="padding-50 opacity-5 text-center">
+                    <div class="scoreboard text-center">
                         <div class="game-tag">
                             <h3>The Word</h3>
                             <div id="word-to-guess"></div>
@@ -78,25 +78,26 @@ https://umn.bootcampcontent.com/University-of-Minnesota-Boot-Camp/MINSTP201901FS
     </div>
 
     <!-- Modal -->
-    <div class="modal fade" id="modalCenter" tabindex="-1" role="dialog" aria-labelledby="modalCenterTitle" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal fade" id="winLoseModal">
+        <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="modalCenterTitle">Modal title</h5>
+                    <h5 class="modal-title" id="winLoseModalTitle"></h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
-                <div class="modal-body">
+                <div class="modal-body" id="winLoseModalBody">
                     ...
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary">Save changes</button>
+                    <button type="button" class="btn btn-primary" data-dismiss="modal" id="play-again">Yes! Play again!</button>
                 </div>
             </div>
         </div>
     </div>
+
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"

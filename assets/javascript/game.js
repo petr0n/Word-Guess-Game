@@ -86,10 +86,6 @@ var game = {
             s.guessedArr.push(letter);
             s.totalGuessesEl.innerHTML = s.guessedArr.length;
         }
-        // console.log(s.guessedArr.indexOf(letter) !== -1);
-        // console.log('s.guessedArr: ');
-        // console.log(s.guessedArr);
-
         console.log(randomWord + '--' + letter);
         // get all indexes of the letter
         s.indicesArr = game.indexesOf(randomWord, letter);
@@ -101,19 +97,21 @@ var game = {
                 s.correctGuessesArr[x] = letter;
             });
             var correctGuess = s.correctGuessesArr.join('');
-            console.log('correctGuess: ' + correctGuess);
+            // console.log('correctGuess: ' + correctGuess);
             if (correctGuess == randomWord) {
                 s.wins++;
                 s.winsEl.innerHTML = s.wins;
-                var newGameWin = confirm('GAME OVER! \r\nYOU WIN! Congrats, mi amigo. \r\n\r\n Play again?');
-                if (newGameWin) {
-                    game.reset();
-                    game.init();
-                }
+                
+                var youWin = new Audio('assets/audio/you-win.mp3');
+                youWin.play();
+                // bootstrap modal
+                popModal('YOU WIN!','GAME OVER! \r\ Congrats, mi amigo. \r\n\r\n Play again?');
             }
         } else { // letter not in word 
             if (s.incorrectGuessesArr.indexOf(letter) > -1){
             } else {
+                var wrongLetter = new Audio('assets/audio/wrong-letter.mp3');
+                wrongLetter.play();
                 var p = s.spanEl.cloneNode(true);
                 p.innerHTML = letter;                
                 s.nonMatchEl.appendChild(p);
@@ -125,13 +123,11 @@ var game = {
                 }
             }
             if (s.incorrectGuessesArr.length > 6) {
-                var newGameLose = confirm('GAME OVER! \r\nOh no, you lose! \r\n\r\n Play again?');
+                var youLose = new Audio('assets/audio/you-lose.mp3');
+                youLose.play();
+                popModal('YOU LOSE!','GAME OVER!\r\nOh no, you lose! \r\n\r\n Play again?');
                 s.losses++;
                 s.lossesEl.innerHTML = s.losses;
-                if (newGameLose) {
-                    game.reset();
-                    game.init();
-                }
             }
         }
     },
@@ -156,6 +152,10 @@ var game = {
         s.incorrectGuessesArr = [];
         s.totalGuessesEl.innerHTML = '';
         document.removeEventListener('keyup', _myListener, false);
+        var manParts = document.getElementById('hangman').childNodes;
+        manParts.map(function(x){
+            x.style.display = 'none';
+        });
     },
     indexesOf: function(string, char) { // helper function
         var indices = [];
@@ -171,5 +171,15 @@ var game = {
 })();
 
 function popModal(title,body){
-
+    myModal = $('#winLoseModal');
+    myModal.modal();
+    myModal.on('shown.bs.modal', function () {
+        document.getElementById('winLoseModalBody').innerHTML = body;
+        document.getElementById('winLoseModalTitle').innerHTML = title;
+        yesBtn = document.getElementById('play-again');
+        yesBtn.addEventListener('click', function(){
+            game.reset();
+            game.init();
+        });
+    });
 }
