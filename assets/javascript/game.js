@@ -97,7 +97,6 @@ var game = {
                 s.correctGuessesArr[x] = letter;
             });
             var correctGuess = s.correctGuessesArr.join('');
-            // console.log('correctGuess: ' + correctGuess);
             if (correctGuess == randomWord) {
                 s.wins++;
                 s.winsEl.innerHTML = s.wins;
