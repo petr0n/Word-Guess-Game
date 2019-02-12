@@ -73,7 +73,6 @@ var game = {
     init: function(){
         s = this.settings;
         var randomWord = wordList[Math.floor(Math.random() * wordList.length)];
-        // console.log('new word: ' + randomWord);
         for (var x = 0; x < randomWord.length; x++) {
             var p = s.spanEl.cloneNode(true);
             p.innerHTML = '&nbsp;';
@@ -86,7 +85,6 @@ var game = {
             s.guessedArr.push(letter);
             s.totalGuessesEl.innerHTML = s.guessedArr.length;
         }
-        console.log(randomWord + '--' + letter);
         // get all indexes of the letter
         s.indicesArr = game.indexesOf(randomWord, letter);
         if (s.indicesArr.length) { // has one or more letters in word
@@ -160,7 +158,6 @@ var game = {
     },
     indexesOf: function(string, char) { // helper function
         var indices = [];
-        // console.log(string + '  === ' + char);
         for(var i=0; i < string.length;i++) {
             if (string[i] === char) indices.push(i);
         }
