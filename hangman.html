@@ -9,7 +9,7 @@ https://umn.bootcampcontent.com/University-of-Minnesota-Boot-Camp/MINSTP201901FS
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Peter's Hangman Game</title>
-    <link href='https://fonts.googleapis.com/css?family=Ultra' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Ultra|B612+Mono' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS"
         crossorigin="anonymous">
     <link rel="stylesheet" href="assets/css/reset.css">
@@ -41,19 +41,13 @@ https://umn.bootcampcontent.com/University-of-Minnesota-Boot-Camp/MINSTP201901FS
                 </div>
                 <div class="col-sm-4">
                     <div class="scoreboard text-center">
-                        <div class="game-tag">
+                        <div>
                             <h3>The Word</h3>
                             <div id="word-to-guess"></div>
                         </div>
-                        <hr>
-                        <div class="game-tag">
-                            <h3>Dumb Guesses</h3>
+                        <div>
+                            <h3 class="guesses">Guesses <span class="xof"><span id="total-guesses">0</span>/7</span></h3>
                             <div id="non-matching"></div>
-                        </div>
-                        <hr>
-                        <div class="game-tag">
-                            <h3>Ur Guesses</h3>
-                            <div id="total-guesses"></div>
                         </div>
                         <hr>
                         <div class="row score">

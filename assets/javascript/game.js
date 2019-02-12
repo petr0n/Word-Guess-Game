@@ -150,11 +150,13 @@ var game = {
             s.nonMatchEl.removeChild(s.nonMatchEl.firstChild);
         }
         s.incorrectGuessesArr = [];
-        s.totalGuessesEl.innerHTML = '';
+        s.totalGuessesEl.innerHTML = 0;
         document.removeEventListener('keyup', _myListener, false);
-        var manParts = document.getElementById('hangman').childNodes;
-        manParts.map(function(x){
-            x.style.display = 'none';
+        // hide hangman
+        var parts = document.getElementById('hangman').childNodes;
+        var partsArr = Array.prototype.slice.call(parts);
+        partsArr.map(function(x){
+            if(x.style) x.style.display = 'none';
         });
     },
     indexesOf: function(string, char) { // helper function
